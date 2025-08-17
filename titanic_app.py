@@ -1,11 +1,8 @@
 import streamlit as st
 import pandas as pd
-import pickle
+import joblib
 
-# Load trained model
-with open("titanic_voting_model.pkl", "rb") as f:
-    model = pickle.load(f)
-
+model = joblib.load("titanic_voting_model.pkl")
 st.title("🚢 Titanic Survival Prediction App")
 st.write("Enter passenger details to predict survival probability.")
 
@@ -47,4 +44,5 @@ if submitted:
         st.success(f"✅ The passenger is likely to **Survive** (probability: {prob:.2f})")
     else:
         st.error(f"❌ The passenger is likely to **Not Survive** (probability: {prob:.2f})")
+
 
