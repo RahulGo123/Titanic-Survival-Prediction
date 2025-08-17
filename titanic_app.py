@@ -3,7 +3,7 @@ import pandas as pd
 import pickle
 
 # Load trained model
-with open("titanic/titanic_voting_model.pkl", "rb") as f:
+with open("titanic_voting_model.pkl", "rb") as f:
     model = pickle.load(f)
 
 st.title("🚢 Titanic Survival Prediction App")
@@ -47,3 +47,4 @@ if submitted:
         st.success(f"✅ The passenger is likely to **Survive** (probability: {prob:.2f})")
     else:
         st.error(f"❌ The passenger is likely to **Not Survive** (probability: {prob:.2f})")
+
